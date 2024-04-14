@@ -13,8 +13,8 @@ export default newProject = class Project {
     set name(newName) {
         this.projectName = newName;
     }
-    addToList(name, urgency, note, date) {
-        let addList = new newList(name, urgency, note, date);
+    addToList(name, urgency, note, date, complete) {
+        let addList = new newList(name, urgency, note, date, complete);
         this.toDoList.push(addList);
     }
 };
