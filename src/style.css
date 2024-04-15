@@ -73,14 +73,15 @@ body {
 }
 
 #list > div {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 10fr 3fr 3fr 1fr;
   margin-bottom: 5px;
   margin-top: 5px;
   align-items: center;
+  justify-content: center;
 }
 
-#list > div > li {
+#list > div li {
   margin-right: auto;
   margin-left: 10px;
 }
@@ -102,4 +103,44 @@ body {
   flex-flow: column;
   padding: 20px;
   gap: 10px;
+}
+
+.low {
+  width: 100px;
+  height: 20px;
+  background-color: rgb(123, 255, 0);
+  text-align: center;
+  border-radius: 5px;
+}
+
+.low::before {
+  content: "low";
+  text-align: center;
+  width: 100px;
+  height: 100px;
+}
+
+.medium {
+  width: 100px;
+  height: 20px;
+  background-color: rgb(248, 224, 7);
+  text-align: center;
+  border-radius: 5px;
+}
+
+.medium::before {
+  background-color: rgb(248, 224, 7);
+  content: "medium";
+}
+
+.high {
+  width: 100px;
+  height: 20px;
+  background-color: rgb(248, 7, 7);
+  text-align: center;
+  border-radius: 5px;
+}
+
+.high::before {
+  content: "high";
 }

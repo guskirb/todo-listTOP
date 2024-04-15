@@ -9,18 +9,36 @@ const addButton = document.getElementById("submit");
 const popupCloseButton = document.getElementById("popupClose");
 const showInputButton = document.getElementById("addProject");
 const projectTitle = document.getElementById("projectTitle");
+const taskName = document.getElementById("taskName");
+const taskDesc = document.getElementById("taskDesc");
+const deadline = document.getElementById("deadline");
+const priority = document.getElementById("urgency");
+const submitButton = document.getElementById("submitList");
 
 const listMain = document.getElementById("list");
 
 let projectList = [];
 
+let currentProject;
+
 let today = new newProject("Today");
 let thisWeek = new newProject("This Week");
 thisWeek.addToList("Work Meeting")
-today.addToList("Go shopping", false, "Buy apples", "24,07,2024");
-today.addToList("Meet friends for lunch");
+today.addToList("Go shopping", "low", "Buy apples", "2024-04-30");
+today.addToList("Meet friends for lunch", "low", "Call her 10 minutes before", "2024-04-30");
 projectList.push(today);
 projectList.push(thisWeek);
+
+function newListButton() {
+    if (currentProject === undefined) {
+        return alert("Please Select a List");
+    } else {
+        currentProject.addToList(taskName.value, priority.value, taskDesc.value, deadline.value);
+        refreshList(currentProject);
+    }
+};
+
+submitButton.addEventListener("click", newListButton);
 
 // add project popup window
 showInputButton.addEventListener("click", () => {
@@ -64,11 +82,14 @@ function newProjectButton(value) {
     newDiv.appendChild(deleteButton).textContent = "x";
     newDiv.firstChild.addEventListener("click", () => {
         refreshList(projectList[value]);
+        currentProject = projectList[value];
+        console.log(currentProject);
     });
     newDiv.lastChild.addEventListener("click", () => {
         deleteProject(value)
     });
 }
+
 
 function deleteProject(value) {
     projectList.splice(value, 1);
@@ -89,6 +110,9 @@ function refreshList(project) {
         newDiv.appendChild(checkBox);
         newDiv.appendChild(document.createElement("li")).textContent = project.toDoList[x].name;
         newDiv.appendChild(document.createElement("li")).textContent = project.toDoList[x].date;
+        newDiv.lastChild.classList.add("date");
+        newDiv.appendChild(document.createElement("div"))
+        newDiv.lastChild.classList.add(project.toDoList[x].urgency);
         newDiv.appendChild(deleteButton).textContent = "x";
 
         deleteButton.addEventListener("click", () => {

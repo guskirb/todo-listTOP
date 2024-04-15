@@ -34,6 +34,7 @@
         </div>
 
         <main id="list">
+
         </main>
 
     </div>
@@ -41,11 +42,15 @@
         <label for="taskName">Task Name:</label>
         <input type="text" name="taskName" id="taskName">
         <label for="taskDesc">Description:</label>
-        <textarea name="taskDesc" id="taskDesc" cols="30" rows="5"></textarea>
+        <textarea name="taskDesc" id="taskDesc" cols="30" rows=""></textarea>
         <div><label for="deadline">Complete By:</label>
             <input type="date" name="deadline" id="deadline">
-            <label for="important">Important?:</label>
-            <input type="checkbox" name="important" id="important">
+            <label for="urgency">Priority:</label>
+            <select name="urgency" id="urgency">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
             <button id="submitList">Submit</button>
         </div>
 
