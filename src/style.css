@@ -4,12 +4,12 @@ body {
   margin: 0;
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: 1fr 6fr;
+  grid-template-rows: 1fr 8fr;
   grid-template-columns: minmax(300px, 1fr) 3fr 2fr;
 }
 
 #header {
-  background-color: black;
+  background-color: rgb(161, 161, 161);
   grid-row: 1 / span 1;
   grid-column: 2 / span 2;
 }
@@ -22,35 +22,84 @@ body {
   flex-flow: column;
 }
 
-#details {
-  grid-column: 3 / span 1;
-  grid-row: 2 / span 1;
-  background-color: red;
-  margin: 50px;
-  border-radius: 20px;
-}
-
 #projectList {
   display: flex;
   flex-flow: column;
   width: 150px;
+  align-items: end;
 }
 
 #addProject {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
-  align-self: center;
+  align-self: flex-start;
+  margin-top: auto;
+  margin-bottom: 2vh;
+  margin-left: 2vh;
 }
 
 #addProjectPopup {
+  position: absolute;
   background-color: rgb(222, 255, 103);
-  width: 90%;
+  width: max(14%, 250px);
   height: 20%;
   align-self: center;
   margin-top: auto;
-  display: flex;
+  display: none;
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  bottom: 8vh;
+  border-radius: 5px;
+  gap: 2vh;
+}
+
+.titleList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#toDoList {
+  margin: 30px;
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+}
+
+#list {
+  list-style: none;
+}
+
+#list > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  align-items: center;
+}
+
+#list > div > li {
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+#addList {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+#details {
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+  background-color: red;
+  margin: 30px;
+  margin-left: 0;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column;
+  padding: 20px;
+  gap: 10px;
 }

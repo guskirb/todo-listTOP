@@ -10,22 +10,46 @@
 </head>
 
 <body>
-    <div id="header"></div>
+    <div id="header">
+    </div>
     <div id="sidebar">
         <h1>To-Do List</h1>
+        <h2>Lists:</h2>
         <ul id="projectList">
-            <h2>Lists</h2>
-
         </ul>
         <div id="addProjectPopup">
-            <label for="projectInput">Project Name</label>
+            <div>
+                <label for="projectInput">Project Name</label>
+                <button id="popupClose">x</button>
+            </div>
             <input type="text" name="projectInput" id="projectInput">
             <button id="submit">Add</button>
         </div>
         <button id="addProject">+</button>
     </div>
-    <main id="list"></main>
-    <div id="details"></div>
+    <div id="toDoList">
+        <div class="titleList">
+            <h2 id="projectTitle"></h2>
+            <button id="addList">+</button>
+        </div>
+
+        <main id="list">
+        </main>
+
+    </div>
+    <div id="details">
+        <label for="taskName">Task Name:</label>
+        <input type="text" name="taskName" id="taskName">
+        <label for="taskDesc">Description:</label>
+        <textarea name="taskDesc" id="taskDesc" cols="30" rows="5"></textarea>
+        <div><label for="deadline">Complete By:</label>
+            <input type="date" name="deadline" id="deadline">
+            <label for="important">Important?:</label>
+            <input type="checkbox" name="important" id="important">
+            <button id="submitList">Submit</button>
+        </div>
+
+    </div>
 </body>
 
 </html>
