@@ -5,12 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <%= htmlWebpackPlugin.options.title %>
+        To-Do List
     </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <div id="header">
+        <h2 id="projectTitle">Select a List</h2>
+        <img src="../resources/search.svg" alt="" class="searchIcon">
+        <input type="search" id="listSearch">
     </div>
     <div id="sidebar">
         <h1>To-Do List</h1>
@@ -25,21 +33,40 @@
             <input type="text" name="projectInput" id="projectInput">
             <button id="submit">Add</button>
         </div>
-        <button id="addProject">+</button>
+        <img src="../resources/whiteplus.svg" alt="" id="addProject">
     </div>
     <div id="toDoList">
         <div class="titleList">
-            <h2 id="projectTitle"></h2>
             <button id="addList">+</button>
         </div>
-
         <main id="list">
-
         </main>
 
     </div>
+    <div id="editList">
+        <div class="editUpper">
+            <label for="editTaskName">Task Name:</label>
+            <button id="closeEdit">x</button>
+        </div>
+        <input type="text" name="editTaskName" id="editTaskName">
+        <label for="editTaskDesc">Description:</label>
+        <textarea name="editTaskDesc" id="editTaskDesc" cols="30" rows=""></textarea>
+        <div id="editLower">
+            <label for="editDeadline">Complete By:</label>
+            <input type="date" name="editDeadline" id="editDeadline">
+            <label for="editUrgency">Priority:</label>
+            <select name="editUrgency" id="editUrgency">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+    </div>
     <div id="details">
-        <label for="taskName">Task Name:</label>
+        <div class="detailsUpper">
+            <label for="taskName">Task Name:</label>
+            <button id="closeDetails">x</button>
+        </div>
         <input type="text" name="taskName" id="taskName">
         <label for="taskDesc">Description:</label>
         <textarea name="taskDesc" id="taskDesc" cols="30" rows=""></textarea>
@@ -53,7 +80,6 @@
             </select>
             <button id="submitList">Submit</button>
         </div>
-
     </div>
 </body>
 

@@ -1,32 +1,149 @@
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+:root {
+  --sidebar-color: #00aa77;
+}
+
 body {
-  border: solid 1px red;
   height: 100vh;
   margin: 0;
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: 1fr 8fr;
+  grid-template-rows: 1fr 3fr 5fr;
   grid-template-columns: minmax(300px, 1fr) 3fr 2fr;
+  font-family: "Roboto", sans-serif;
 }
 
 #header {
   background-color: rgb(161, 161, 161);
   grid-row: 1 / span 1;
   grid-column: 2 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.searchIcon {
+  height: 50px;
+  margin-left: auto;
+}
+
+#listSearch {
+  width: 25vw;
+  height: 35px;
+  border-radius: 10px;
 }
 
 #sidebar {
   grid-column: 1 / span 1;
-  grid-row: 1 / span 2;
-  background-color: blue;
+  grid-row: 1 / span 3;
+  background-color: var(--sidebar-color);
   display: flex;
   flex-flow: column;
+}
+
+#sidebar h1,
+#sidebar h2 {
+  padding-left: 30px;
+  color: white;
 }
 
 #projectList {
   display: flex;
   flex-flow: column;
-  width: 150px;
-  align-items: end;
+  gap: 5px;
+}
+
+#projectList > div {
+  display: flex;
+  justify-content: space-between;
+  margin-left: -20px;
+}
+
+.projectDelete {
+  content: url(../resources/whiteclose.svg);
+  height: 30px;
+  padding-right: 20px;
+}
+
+#projectList button {
+  border: none;
+  background-color: var(--sidebar-color);
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
 #addProject {
@@ -57,8 +174,7 @@ body {
 
 .titleList {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
 }
 
 #toDoList {
@@ -66,6 +182,7 @@ body {
   display: flex;
   flex-flow: column;
   gap: 5px;
+  grid-row: 2 / 4;
 }
 
 #list {
@@ -74,11 +191,14 @@ body {
 
 #list > div {
   display: grid;
-  grid-template-columns: 1fr 10fr 3fr 3fr 1fr;
+  grid-template-columns: 1fr 10fr 3fr 3fr 1fr 1fr;
   margin-bottom: 5px;
   margin-top: 5px;
   align-items: center;
   justify-content: center;
+  border: solid 1px black;
+  height: 35px;
+  border-radius: 10px;
 }
 
 #list > div li {
@@ -93,13 +213,12 @@ body {
 }
 
 #details {
-  grid-column: 3 / span 1;
-  grid-row: 2 / span 1;
+  grid-column: 3 / 4;
+  grid-row: 2 / 4;
   background-color: red;
-  margin: 30px;
-  margin-left: 0;
+  margin: 10px;
   border-radius: 5px;
-  display: flex;
+  display: none;
   flex-flow: column;
   padding: 20px;
   gap: 10px;
@@ -108,39 +227,72 @@ body {
 .low {
   width: 100px;
   height: 20px;
-  background-color: rgb(123, 255, 0);
+  background-color: rgb(98, 255, 93);
   text-align: center;
   border-radius: 5px;
 }
 
 .low::before {
   content: "low";
-  text-align: center;
-  width: 100px;
-  height: 100px;
+  color: white;
 }
 
 .medium {
   width: 100px;
   height: 20px;
-  background-color: rgb(248, 224, 7);
+  background-color: rgba(255, 235, 51, 0.877);
   text-align: center;
   border-radius: 5px;
 }
 
 .medium::before {
-  background-color: rgb(248, 224, 7);
   content: "medium";
+  color: white;
 }
 
 .high {
   width: 100px;
   height: 20px;
-  background-color: rgb(248, 7, 7);
+  background-color: rgb(255, 57, 57);
   text-align: center;
   border-radius: 5px;
 }
 
 .high::before {
   content: "high";
+  color: white;
+}
+
+#editList {
+  background-color: blueviolet;
+  display: none;
+  flex-flow: column;
+  padding: 20px;
+  gap: 10px;
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  padding: 20px;
+  gap: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.editUpper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detailsUpper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit {
+  height: 25px;
+  content: url(../resources/edit.svg);
+}
+
+.delete {
+  height: 25px;
+  content: url(../resources/close.svg);
 }
