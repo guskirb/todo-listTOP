@@ -27,7 +27,7 @@
         </ul>
         <div id="addProjectPopup">
             <div>
-                <label for="projectInput">Project Name</label>
+                <label for="projectInput">Project Name:</label>
                 <button id="popupClose">x</button>
             </div>
             <input type="text" name="projectInput" id="projectInput">
@@ -37,6 +37,10 @@
     </div>
     <div id="toDoList">
         <div class="titleList">
+            <img src="../resources/check.svg" alt="">
+            <div>Name</div>
+            <img src="../resources/date.svg" alt="" class="imgCenter">
+            <img src="../resources/important.svg" alt="" class="imgCenter">
             <button id="addList">+</button>
         </div>
         <main id="list">
@@ -45,41 +49,51 @@
     </div>
     <div id="editList">
         <div class="editUpper">
-            <label for="editTaskName">Task Name:</label>
+            <label for="editTaskName">Edit Task Name:</label>
             <button id="closeEdit">x</button>
         </div>
         <input type="text" name="editTaskName" id="editTaskName">
         <label for="editTaskDesc">Description:</label>
-        <textarea name="editTaskDesc" id="editTaskDesc" cols="30" rows=""></textarea>
+        <textarea name="editTaskDesc" id="editTaskDesc" cols="30" rows="3" style="resize: none;"></textarea></textarea>
         <div id="editLower">
-            <label for="editDeadline">Complete By:</label>
-            <input type="date" name="editDeadline" id="editDeadline">
-            <label for="editUrgency">Priority:</label>
-            <select name="editUrgency" id="editUrgency">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-            </select>
+            <div>
+                <label for="editDeadline">Complete By:</label>
+                <input type="date" name="editDeadline" id="editDeadline">
+            </div>
+
+            <div>
+                <label for="editUrgency">Priority:</label>
+                <select name="editUrgency" id="editUrgency">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
         </div>
     </div>
     <div id="details">
         <div class="detailsUpper">
-            <label for="taskName">Task Name:</label>
+            <label for="taskName">New Task Name:</label>
             <button id="closeDetails">x</button>
         </div>
         <input type="text" name="taskName" id="taskName">
         <label for="taskDesc">Description:</label>
-        <textarea name="taskDesc" id="taskDesc" cols="30" rows=""></textarea>
-        <div><label for="deadline">Complete By:</label>
-            <input type="date" name="deadline" id="deadline">
-            <label for="urgency">Priority:</label>
-            <select name="urgency" id="urgency">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-            </select>
-            <button id="submitList">Submit</button>
+        <textarea name="taskDesc" id="taskDesc" cols="30" rows="3" style="resize: none;"></textarea></textarea>
+        <div id="detailsLower">
+            <div>
+                <label for="deadline">Complete By:</label>
+                <input type="date" name="deadline" id="deadline">
+            </div>
+            <div>
+                <label for="urgency">Priority:</label>
+                <select name="urgency" id="urgency">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
         </div>
+        <button id="submitList">Submit</button>
     </div>
 </body>
 

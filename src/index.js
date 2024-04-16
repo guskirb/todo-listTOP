@@ -178,8 +178,8 @@ function renderList(project, value) {
 }
 
 function editEventListener(project, value) {
-    editLower.removeChild(editLower.lastChild);
-    editLower.appendChild(document.createElement("button")).textContent = "Submit";
+    editPopup.removeChild(editPopup.lastChild);
+    editPopup.appendChild(document.createElement("button")).textContent = "Submit";
     editPopup.style.display = "flex";
     editPopup.style.gridRow = "2 / 3";
     editPopup.style.gridColumn = "3 / 4";
@@ -188,7 +188,7 @@ function editEventListener(project, value) {
     editTaskDesc.value = project.toDoList[value].note;
     editDeadline.value = project.toDoList[value].date;
     editPriority.value = project.toDoList[value].urgency;
-    editLower.lastChild.addEventListener('click', () => {
+    editPopup.lastChild.addEventListener('click', () => {
         editButtonListener(project, value)
     });
 }
