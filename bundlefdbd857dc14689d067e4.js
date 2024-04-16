@@ -103,9 +103,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.roboto-thin {
 }
 
 :root {
-  --sidebar-color: #00aa77;
-  --sidebar-color-light: #00da98;
-  --light-grey: #e7e7e7;
+  --sidebar-color: #003c5f;
+  --sidebar-color-light: #015484;
+  --light-grey: #f1f1f1;
   --box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
     rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
@@ -132,8 +132,8 @@ body {
 }
 
 .searchIcon {
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   margin-left: auto;
   margin-right: 10px;
 }
@@ -158,6 +158,7 @@ body {
 #sidebar h2 {
   padding-left: 30px;
   color: white;
+  font-weight: 400;
 }
 
 #projectList {
@@ -173,7 +174,7 @@ body {
 
 .projectDelete {
   content: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
-  height: 30px;
+  height: 20px;
   padding-right: 20px;
 }
 
@@ -181,7 +182,7 @@ body {
   border: none;
   background: transparent;
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
   width: 100%;
   height: 40px;
@@ -209,7 +210,7 @@ body {
 
 #addProjectPopup {
   position: absolute;
-  background-color: rgb(222, 255, 103);
+  background-color: var(--light-grey);
   width: 230px;
   height: 100px;
   align-self: center;
@@ -239,6 +240,11 @@ body {
   border-radius: 5px;
   border: none;
   font-size: 0.9em;
+  font-weight: 600;
+}
+
+#addProjectPopup > button:hover {
+  background-color: var(--sidebar-color-light);
 }
 
 #addProjectPopup > input {
@@ -246,6 +252,10 @@ body {
   height: 25%;
   border-radius: 10px;
   padding-left: 10px;
+}
+
+#projectTitle {
+  font-weight: 500;
 }
 
 .titleList {
@@ -256,6 +266,7 @@ body {
   background-color: var(--light-grey);
   border-radius: 10px;
   font-weight: 500;
+  height: 40px;
 }
 
 .titleList > img {
@@ -352,14 +363,14 @@ body {
 }
 
 #editList {
-  background-color: blueviolet;
+  background-color: var(--light-grey);
   display: none;
   flex-flow: column;
   grid-column: 3 / 4;
   grid-row: 2 / 3;
   padding: 20px;
   gap: 5px;
-  margin: 5px;
+  margin: 10px;
   border-radius: 5px;
   margin-bottom: 0px;
   font-weight: 500;
@@ -388,13 +399,19 @@ body {
   border-radius: 5px;
   border: none;
   font-size: 0.9em;
+  font-weight: 600;
+}
+
+#editList > button:hover,
+#details > button:hover {
+  background-color: var(--sidebar-color-light);
 }
 
 #details {
   grid-column: 3 / 4;
   grid-row: 2 / 4;
-  background-color: red;
-  margin: 5px;
+  background-color: var(--light-grey);
+  margin: 10px;
   border-radius: 5px;
   display: none;
   flex-flow: column;
@@ -467,7 +484,13 @@ select {
   background-color: var(--sidebar-color);
   border-radius: 5px;
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":[".roboto-thin {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 100;\n  font-style: normal;\n}\n\n.roboto-thin-italic {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 100;\n  font-style: italic;\n}\n\n.roboto-light {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 300;\n  font-style: normal;\n}\n\n.roboto-light-italic {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 300;\n  font-style: italic;\n}\n\n.roboto-regular {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 400;\n  font-style: normal;\n}\n\n.roboto-regular-italic {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 400;\n  font-style: italic;\n}\n\n.roboto-medium {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 500;\n  font-style: normal;\n}\n\n.roboto-medium-italic {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 500;\n  font-style: italic;\n}\n\n.roboto-bold {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 700;\n  font-style: normal;\n}\n\n.roboto-bold-italic {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 700;\n  font-style: italic;\n}\n\n.roboto-black {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 900;\n  font-style: normal;\n}\n\n.roboto-black-italic {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 900;\n  font-style: italic;\n}\n\n:root {\n  --sidebar-color: #00aa77;\n  --sidebar-color-light: #00da98;\n  --light-grey: #e7e7e7;\n  --box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,\n    rgba(17, 17, 26, 0.1) 0px 0px 8px;\n}\n\nbody {\n  height: 100vh;\n  margin: 0;\n  box-sizing: border-box;\n  display: grid;\n  grid-template-rows: 1fr 3fr 5fr;\n  grid-template-columns: minmax(300px, 1fr) 3fr 2fr;\n  font-family: \"Roboto\", sans-serif;\n}\n\n#header {\n  background-color: var(--light-grey);\n  grid-row: 1 / span 1;\n  grid-column: 2 / span 2;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding-left: 2vw;\n  padding-right: 2vw;\n}\n\n.searchIcon {\n  height: 30px;\n  width: 30px;\n  margin-left: auto;\n  margin-right: 10px;\n}\n\n#listSearch {\n  width: 25vw;\n  height: 35px;\n  border-radius: 10px;\n  border: none;\n  padding-left: 10px;\n}\n\n#sidebar {\n  grid-column: 1 / span 1;\n  grid-row: 1 / span 3;\n  background-color: var(--sidebar-color);\n  display: flex;\n  flex-flow: column;\n}\n\n#sidebar h1,\n#sidebar h2 {\n  padding-left: 30px;\n  color: white;\n}\n\n#projectList {\n  display: flex;\n  flex-flow: column;\n}\n\n#projectList > div {\n  display: flex;\n  margin-left: -40px;\n  align-items: center;\n}\n\n.projectDelete {\n  content: url(../resources/whiteclose.svg);\n  height: 30px;\n  padding-right: 20px;\n}\n\n#projectList button {\n  border: none;\n  background: transparent;\n  color: white;\n  font-size: 1.3rem;\n  font-weight: 500;\n  width: 100%;\n  height: 40px;\n  text-align: start;\n  padding-left: 30px;\n}\n\n#projectList > div:hover {\n  background-color: var(--sidebar-color-light);\n}\n\n.select {\n  background-color: var(--sidebar-color-light);\n}\n\n#addProject {\n  height: 40px;\n  width: 40px;\n  border-radius: 50%;\n  align-self: flex-start;\n  margin-top: auto;\n  margin-bottom: 2vh;\n  margin-left: 2vh;\n}\n\n#addProjectPopup {\n  position: absolute;\n  background-color: rgb(222, 255, 103);\n  width: 230px;\n  height: 100px;\n  align-self: center;\n  display: none;\n  flex-flow: column;\n  justify-content: space-between;\n  align-items: center;\n  bottom: 8vh;\n  border-radius: 5px;\n  padding: 15px;\n  font-weight: 500;\n  box-shadow: var(--box-shadow);\n}\n\n#addProjectPopup > div {\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n}\n\n#addProjectPopup > button {\n  align-self: end;\n  width: 20%;\n  height: 25px;\n  color: white;\n  background-color: var(--sidebar-color);\n  border-radius: 5px;\n  border: none;\n  font-size: 0.9em;\n}\n\n#addProjectPopup > input {\n  width: 90%;\n  height: 25%;\n  border-radius: 10px;\n  padding-left: 10px;\n}\n\n.titleList {\n  display: grid;\n  grid-template-columns: 1fr 10fr 3fr 3fr 2fr;\n  align-items: center;\n  justify-items: start;\n  background-color: var(--light-grey);\n  border-radius: 10px;\n  font-weight: 500;\n}\n\n.titleList > img {\n  height: 30px;\n  justify-self: center;\n}\n\n#addList {\n  height: 35px;\n  justify-self: end;\n  padding-right: 15px;\n}\n\n.titleList > button {\n  border: none;\n}\n\n#toDoList {\n  margin: 30px;\n  display: flex;\n  flex-flow: column;\n  gap: 5px;\n  grid-row: 2 / 4;\n}\n\n#list {\n  list-style: none;\n}\n\n#list > div {\n  display: grid;\n  grid-template-columns: 1fr 10fr 3fr 3fr 1fr 1fr;\n  margin-bottom: 5px;\n  margin-top: 5px;\n  align-items: center;\n  justify-items: start;\n  border: solid 1px var(--light-grey);\n  height: 35px;\n  border-radius: 10px;\n}\n\n#list > div:hover {\n  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;\n}\n\n#list > div > input[type=\"checkbox\"] {\n  justify-self: center;\n}\n\n.date {\n  justify-self: center;\n}\n\n.low {\n  width: 80px;\n  height: 20px;\n  background-color: rgb(98, 255, 93);\n  text-align: center;\n  border-radius: 5px;\n  justify-self: center;\n}\n\n.low::before {\n  content: \"low\";\n  color: white;\n}\n\n.medium {\n  width: 80px;\n  height: 20px;\n  background-color: rgba(255, 235, 51, 0.877);\n  text-align: center;\n  border-radius: 5px;\n  justify-self: center;\n}\n\n.medium::before {\n  content: \"medium\";\n  color: white;\n}\n\n.high {\n  width: 80px;\n  height: 20px;\n  background-color: rgb(255, 57, 57);\n  text-align: center;\n  border-radius: 5px;\n  justify-self: center;\n}\n\n.high::before {\n  content: \"high\";\n  color: white;\n}\n\n#editList {\n  background-color: blueviolet;\n  display: none;\n  flex-flow: column;\n  grid-column: 3 / 4;\n  grid-row: 2 / 3;\n  padding: 20px;\n  gap: 5px;\n  margin: 5px;\n  border-radius: 5px;\n  margin-bottom: 0px;\n  font-weight: 500;\n  box-shadow: var(--box-shadow);\n}\n\n.editUpper {\n  display: flex;\n  justify-content: space-between;\n}\n\n#editLower {\n  display: flex;\n  justify-content: space-between;\n  text-align: end;\n  align-items: center;\n}\n\n#editList > button,\n#details > button {\n  width: 20%;\n  height: 30px;\n  align-self: flex-end;\n  color: white;\n  background-color: var(--sidebar-color);\n  border-radius: 5px;\n  border: none;\n  font-size: 0.9em;\n}\n\n#details {\n  grid-column: 3 / 4;\n  grid-row: 2 / 4;\n  background-color: red;\n  margin: 5px;\n  border-radius: 5px;\n  display: none;\n  flex-flow: column;\n  padding: 20px;\n  gap: 5px;\n  font-weight: 500;\n  box-shadow: var(--box-shadow);\n}\n\n.detailsUpper {\n  display: flex;\n  justify-content: space-between;\n}\n\n#detailsLower {\n  display: flex;\n  justify-content: space-between;\n  text-align: end;\n  align-items: center;\n}\n\n.edit {\n  height: 25px;\n  content: url(../resources/edit.svg);\n}\n\n.delete {\n  height: 25px;\n  content: url(../resources/close.svg);\n}\n\n#editList input,\n#details input,\n#projectInput {\n  border-radius: 10px;\n  height: 25px;\n  font-family: \"Roboto\", sans-serif;\n  border: none;\n  padding: 5px;\n  font-size: 0.9em;\n  font-weight: 300;\n}\n\n#editList textarea,\n#details textarea {\n  border-radius: 10px;\n  font-family: \"Roboto\", sans-serif;\n  border: none;\n  padding: 10px;\n  font-size: 0.9em;\n  font-weight: 300;\n}\n\nselect {\n  border-radius: 10px;\n  font-family: \"Roboto\", sans-serif;\n  border: none;\n  font-size: 1em;\n  padding: 5px;\n  font-weight: 300;\n}\n\n#popupClose,\n#closeEdit,\n#closeDetails {\n  border: none;\n  height: 25px;\n  width: 25px;\n  color: white;\n  background-color: var(--sidebar-color);\n  border-radius: 5px;\n}\n"],"sourceRoot":""}]);
+
+#popupClose:hover,
+#closeEdit:hover,
+#closeDetails:hover {
+  background-color: var(--sidebar-color-light);
+}
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":[".roboto-thin {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 100;\n  font-style: normal;\n}\n\n.roboto-thin-italic {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 100;\n  font-style: italic;\n}\n\n.roboto-light {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 300;\n  font-style: normal;\n}\n\n.roboto-light-italic {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 300;\n  font-style: italic;\n}\n\n.roboto-regular {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 400;\n  font-style: normal;\n}\n\n.roboto-regular-italic {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 400;\n  font-style: italic;\n}\n\n.roboto-medium {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 500;\n  font-style: normal;\n}\n\n.roboto-medium-italic {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 500;\n  font-style: italic;\n}\n\n.roboto-bold {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 700;\n  font-style: normal;\n}\n\n.roboto-bold-italic {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 700;\n  font-style: italic;\n}\n\n.roboto-black {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 900;\n  font-style: normal;\n}\n\n.roboto-black-italic {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 900;\n  font-style: italic;\n}\n\n:root {\n  --sidebar-color: #003c5f;\n  --sidebar-color-light: #015484;\n  --light-grey: #f1f1f1;\n  --box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,\n    rgba(17, 17, 26, 0.1) 0px 0px 8px;\n}\n\nbody {\n  height: 100vh;\n  margin: 0;\n  box-sizing: border-box;\n  display: grid;\n  grid-template-rows: 1fr 3fr 5fr;\n  grid-template-columns: minmax(300px, 1fr) 3fr 2fr;\n  font-family: \"Roboto\", sans-serif;\n}\n\n#header {\n  background-color: var(--light-grey);\n  grid-row: 1 / span 1;\n  grid-column: 2 / span 2;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding-left: 2vw;\n  padding-right: 2vw;\n}\n\n.searchIcon {\n  height: 25px;\n  width: 25px;\n  margin-left: auto;\n  margin-right: 10px;\n}\n\n#listSearch {\n  width: 25vw;\n  height: 35px;\n  border-radius: 10px;\n  border: none;\n  padding-left: 10px;\n}\n\n#sidebar {\n  grid-column: 1 / span 1;\n  grid-row: 1 / span 3;\n  background-color: var(--sidebar-color);\n  display: flex;\n  flex-flow: column;\n}\n\n#sidebar h1,\n#sidebar h2 {\n  padding-left: 30px;\n  color: white;\n  font-weight: 400;\n}\n\n#projectList {\n  display: flex;\n  flex-flow: column;\n}\n\n#projectList > div {\n  display: flex;\n  margin-left: -40px;\n  align-items: center;\n}\n\n.projectDelete {\n  content: url(../resources/whiteclose.svg);\n  height: 20px;\n  padding-right: 20px;\n}\n\n#projectList button {\n  border: none;\n  background: transparent;\n  color: white;\n  font-size: 1.1rem;\n  font-weight: 500;\n  width: 100%;\n  height: 40px;\n  text-align: start;\n  padding-left: 30px;\n}\n\n#projectList > div:hover {\n  background-color: var(--sidebar-color-light);\n}\n\n.select {\n  background-color: var(--sidebar-color-light);\n}\n\n#addProject {\n  height: 40px;\n  width: 40px;\n  border-radius: 50%;\n  align-self: flex-start;\n  margin-top: auto;\n  margin-bottom: 2vh;\n  margin-left: 2vh;\n}\n\n#addProjectPopup {\n  position: absolute;\n  background-color: var(--light-grey);\n  width: 230px;\n  height: 100px;\n  align-self: center;\n  display: none;\n  flex-flow: column;\n  justify-content: space-between;\n  align-items: center;\n  bottom: 8vh;\n  border-radius: 5px;\n  padding: 15px;\n  font-weight: 500;\n  box-shadow: var(--box-shadow);\n}\n\n#addProjectPopup > div {\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n}\n\n#addProjectPopup > button {\n  align-self: end;\n  width: 20%;\n  height: 25px;\n  color: white;\n  background-color: var(--sidebar-color);\n  border-radius: 5px;\n  border: none;\n  font-size: 0.9em;\n  font-weight: 600;\n}\n\n#addProjectPopup > button:hover {\n  background-color: var(--sidebar-color-light);\n}\n\n#addProjectPopup > input {\n  width: 90%;\n  height: 25%;\n  border-radius: 10px;\n  padding-left: 10px;\n}\n\n#projectTitle {\n  font-weight: 500;\n}\n\n.titleList {\n  display: grid;\n  grid-template-columns: 1fr 10fr 3fr 3fr 2fr;\n  align-items: center;\n  justify-items: start;\n  background-color: var(--light-grey);\n  border-radius: 10px;\n  font-weight: 500;\n  height: 40px;\n}\n\n.titleList > img {\n  height: 30px;\n  justify-self: center;\n}\n\n#addList {\n  height: 35px;\n  justify-self: end;\n  padding-right: 15px;\n}\n\n.titleList > button {\n  border: none;\n}\n\n#toDoList {\n  margin: 30px;\n  display: flex;\n  flex-flow: column;\n  gap: 5px;\n  grid-row: 2 / 4;\n}\n\n#list {\n  list-style: none;\n}\n\n#list > div {\n  display: grid;\n  grid-template-columns: 1fr 10fr 3fr 3fr 1fr 1fr;\n  margin-bottom: 5px;\n  margin-top: 5px;\n  align-items: center;\n  justify-items: start;\n  border: solid 1px var(--light-grey);\n  height: 35px;\n  border-radius: 10px;\n}\n\n#list > div:hover {\n  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;\n}\n\n#list > div > input[type=\"checkbox\"] {\n  justify-self: center;\n}\n\n.date {\n  justify-self: center;\n}\n\n.low {\n  width: 80px;\n  height: 20px;\n  background-color: rgb(98, 255, 93);\n  text-align: center;\n  border-radius: 5px;\n  justify-self: center;\n}\n\n.low::before {\n  content: \"low\";\n  color: white;\n}\n\n.medium {\n  width: 80px;\n  height: 20px;\n  background-color: rgba(255, 235, 51, 0.877);\n  text-align: center;\n  border-radius: 5px;\n  justify-self: center;\n}\n\n.medium::before {\n  content: \"medium\";\n  color: white;\n}\n\n.high {\n  width: 80px;\n  height: 20px;\n  background-color: rgb(255, 57, 57);\n  text-align: center;\n  border-radius: 5px;\n  justify-self: center;\n}\n\n.high::before {\n  content: \"high\";\n  color: white;\n}\n\n#editList {\n  background-color: var(--light-grey);\n  display: none;\n  flex-flow: column;\n  grid-column: 3 / 4;\n  grid-row: 2 / 3;\n  padding: 20px;\n  gap: 5px;\n  margin: 10px;\n  border-radius: 5px;\n  margin-bottom: 0px;\n  font-weight: 500;\n  box-shadow: var(--box-shadow);\n}\n\n.editUpper {\n  display: flex;\n  justify-content: space-between;\n}\n\n#editLower {\n  display: flex;\n  justify-content: space-between;\n  text-align: end;\n  align-items: center;\n}\n\n#editList > button,\n#details > button {\n  width: 20%;\n  height: 30px;\n  align-self: flex-end;\n  color: white;\n  background-color: var(--sidebar-color);\n  border-radius: 5px;\n  border: none;\n  font-size: 0.9em;\n  font-weight: 600;\n}\n\n#editList > button:hover,\n#details > button:hover {\n  background-color: var(--sidebar-color-light);\n}\n\n#details {\n  grid-column: 3 / 4;\n  grid-row: 2 / 4;\n  background-color: var(--light-grey);\n  margin: 10px;\n  border-radius: 5px;\n  display: none;\n  flex-flow: column;\n  padding: 20px;\n  gap: 5px;\n  font-weight: 500;\n  box-shadow: var(--box-shadow);\n}\n\n.detailsUpper {\n  display: flex;\n  justify-content: space-between;\n}\n\n#detailsLower {\n  display: flex;\n  justify-content: space-between;\n  text-align: end;\n  align-items: center;\n}\n\n.edit {\n  height: 25px;\n  content: url(../resources/edit.svg);\n}\n\n.delete {\n  height: 25px;\n  content: url(../resources/close.svg);\n}\n\n#editList input,\n#details input,\n#projectInput {\n  border-radius: 10px;\n  height: 25px;\n  font-family: \"Roboto\", sans-serif;\n  border: none;\n  padding: 5px;\n  font-size: 0.9em;\n  font-weight: 300;\n}\n\n#editList textarea,\n#details textarea {\n  border-radius: 10px;\n  font-family: \"Roboto\", sans-serif;\n  border: none;\n  padding: 10px;\n  font-size: 0.9em;\n  font-weight: 300;\n}\n\nselect {\n  border-radius: 10px;\n  font-family: \"Roboto\", sans-serif;\n  border: none;\n  font-size: 1em;\n  padding: 5px;\n  font-weight: 300;\n}\n\n#popupClose,\n#closeEdit,\n#closeDetails {\n  border: none;\n  height: 25px;\n  width: 25px;\n  color: white;\n  background-color: var(--sidebar-color);\n  border-radius: 5px;\n}\n\n#popupClose:hover,\n#closeEdit:hover,\n#closeDetails:hover {\n  background-color: var(--sidebar-color-light);\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1198,7 +1221,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 const sidebar = document.getElementById("projectList");
 const projectInputWindow = document.getElementById("addProjectPopup");
 const projectInput = document.getElementById("projectInput");
@@ -1230,7 +1252,7 @@ let currentProject;
 
 let today = new _src_project_js__WEBPACK_IMPORTED_MODULE_1__["default"]("Today");
 let thisWeek = new _src_project_js__WEBPACK_IMPORTED_MODULE_1__["default"]("This Week");
-thisWeek.addToList("Mother's birthday", "medium", "Remember to buy her a gift", "2024-04-29");
+thisWeek.addToList("Mum's birthday", "medium", "Remember to buy her a gift", "2024-04-29");
 thisWeek.addToList("Work meeting", "high", "Bring draft proposal", "2024-04-30");
 today.addToList("Meet friends for lunch", "low", "Call her 10 minutes before");
 today.addToList("Go shopping", "medium", "Buy apples");
@@ -1238,15 +1260,97 @@ today.addToList("Make dinner", "low", "Look up pie recipe");
 projectList.push(today);
 projectList.push(thisWeek);
 
+let render = new class RenderClass {
+
+    renderList(project, value) {
+        let newDiv = document.createElement("div");
+        let deleteButton = document.createElement("img");
+        let editButton = document.createElement("img");
+        let checkBox = document.createElement("input")
+        checkBox.type = "checkbox";
+        projectTitle.textContent = project.name;
+        listMain.appendChild(newDiv);
+        listMain.lastChild.classList.add(value);
+        newDiv.appendChild(checkBox);
+        newDiv.appendChild(document.createElement("li")).textContent = project.toDoList[value].name;
+        newDiv.appendChild(document.createElement("li")).textContent = project.toDoList[value].date;
+        newDiv.lastChild.classList.add("date");
+        newDiv.appendChild(document.createElement("div"))
+        newDiv.lastChild.classList.add(project.toDoList[value].urgency);
+        newDiv.appendChild(editButton);
+        editButton.classList.add("edit");
+        editButton.addEventListener("click", () => {
+            editEventListener(project, value);
+        })
+        newDiv.appendChild(deleteButton);
+        deleteButton.classList.add("delete");
+        deleteButton.addEventListener("click", () => {
+            deleteEventListener(listMain, newDiv, project, value);
+        })
+    }
+
+    newListButton() {
+        if (currentProject === undefined) {
+            return alert("Please Select a List");
+        } if (taskName.value === "") {
+            alert("Please Enter a Task Name");
+        } else {
+            currentProject.addToList(taskName.value, priority.value, taskDesc.value, deadline.value);
+            render.refreshList(currentProject);
+        }
+    }
+
+    projectButtons() {
+        this.clearButtons();
+        for (let x = 0; x < projectList.length; x++) {
+            this.newProjectButton(x);
+        }
+    }
+
+    newProjectButton(value) {
+        let newDiv = document.createElement("div");
+        let newButton = document.createElement("button");
+        let deleteButton = document.createElement("img");
+        sidebar.appendChild(newDiv);
+        newDiv.appendChild(newButton).textContent = projectList[value].projectName;
+        newDiv.appendChild(deleteButton);
+        deleteButton.classList.add("projectDelete")
+        projectEventListeners(newDiv, value);
+    }
+
+    deleteProject(value) {
+        projectList.splice(value, 1);
+        render.projectButtons();
+    }
+
+    refreshList(project) {
+        this.clearList();
+        for (let x = 0; x < project.toDoList.length; x++) {
+            render.renderList(project, x);
+        }
+    }
+
+    clearList() {
+        while (listMain.firstChild) {
+            listMain.removeChild(listMain.lastChild);
+        }
+    }
+
+    clearButtons() {
+        while (sidebar.firstChild) {
+            sidebar.removeChild(sidebar.lastChild);
+        }
+    }
+
+}
+
 searchBar.addEventListener("input", e => {
-    clearList();
+    render.clearList();
     const value = e.target.value.toLowerCase();
     console.log(currentProject);
     for (let x = 0; x < currentProject.toDoList.length; x++) {
         if (currentProject.toDoList[x].item.toLowerCase().includes(value)) {
-            renderList(currentProject, x);
-        } else {
-
+            render.renderList(currentProject, x);
         }
     }
 })
@@ -1268,18 +1372,7 @@ addListButton.addEventListener("click", () => {
     }
 })
 
-function newListButton() {
-    if (currentProject === undefined) {
-        return alert("Please Select a List");
-    } if (taskName.value === "") {
-        alert("Please Enter a Task Name");
-    } else {
-        currentProject.addToList(taskName.value, priority.value, taskDesc.value, deadline.value);
-        refreshList(currentProject);
-    }
-}
-
-submitButton.addEventListener("click", newListButton);
+submitButton.addEventListener("click", render.newListButton);
 
 // add project popup window
 showInputButton.addEventListener("click", () => {
@@ -1300,87 +1393,26 @@ addButton.addEventListener("click", () => {
         alert("Please Enter a Project Name");
     } else {
         projectList.push(new _src_project_js__WEBPACK_IMPORTED_MODULE_1__["default"](projectInput.value));
-        projectButtons();
+        render.projectButtons();
         projectInput.value = "";
     }
 })
 
-//remove all project buttons
-function projectButtons() {
-    clearButtons();
-    for (let x = 0; x < projectList.length; x++) {
-        newProjectButton(x);
-    }
-}
-
-//add a new project button
-function newProjectButton(value) {
-    let newDiv = document.createElement("div");
-    let newButton = document.createElement("button");
-    let deleteButton = document.createElement("img");
-    sidebar.appendChild(newDiv);
-    newDiv.appendChild(newButton).textContent = projectList[value].projectName;
-    newDiv.appendChild(deleteButton);
-    deleteButton.classList.add("projectDelete")
-    projectEventListeners(newDiv, value);
-}
-
 function projectEventListeners(element, value) {
-
     element.firstChild.addEventListener("click", () => {
         document.querySelector(".select")?.classList.remove("select");
         element.classList.add("select");
-        refreshList(projectList[value]);
+        render.refreshList(projectList[value]);
         currentProject = projectList[value];
     });
     element.lastChild.addEventListener("click", () => {
-        deleteProject(value)
+        render.deleteProject(value)
     });
-}
-
-function deleteProject(value) {
-    projectList.splice(value, 1);
-    projectButtons();
-}
-
-function refreshList(project) {
-    clearList();
-    for (let x = 0; x < project.toDoList.length; x++) {
-        renderList(project, x);
-    }
-}
-
-function renderList(project, value) {
-    let newDiv = document.createElement("div");
-    let deleteButton = document.createElement("img");
-    let editButton = document.createElement("img");
-    let checkBox = document.createElement("input")
-    checkBox.type = "checkbox";
-
-    projectTitle.textContent = project.name;
-    listMain.appendChild(newDiv);
-    listMain.lastChild.classList.add(value);
-    newDiv.appendChild(checkBox);
-    newDiv.appendChild(document.createElement("li")).textContent = project.toDoList[value].name;
-    newDiv.appendChild(document.createElement("li")).textContent = project.toDoList[value].date;
-    newDiv.lastChild.classList.add("date");
-    newDiv.appendChild(document.createElement("div"))
-    newDiv.lastChild.classList.add(project.toDoList[value].urgency);
-    newDiv.appendChild(editButton);
-    editButton.classList.add("edit");
-    editButton.addEventListener("click", () => {
-        editEventListener(project, value);
-    })
-    newDiv.appendChild(deleteButton);
-    deleteButton.classList.add("delete");
-    deleteButton.addEventListener("click", () => {
-        deleteEventListener(listMain, newDiv, project, value);
-    })
 }
 
 function editEventListener(project, value) {
     editPopup.removeChild(editPopup.lastChild);
-    editPopup.appendChild(document.createElement("button")).textContent = "Submit";
+    editPopup.appendChild(document.createElement("button")).textContent = "Edit";
     editPopup.style.display = "flex";
     editPopup.style.gridRow = "2 / 3";
     editPopup.style.gridColumn = "3 / 4";
@@ -1395,37 +1427,28 @@ function editEventListener(project, value) {
 }
 
 function editButtonListener(project, value) {
-    project.toDoList[value].name = editTaskName.value;
-    project.toDoList[value].note = editTaskDesc.value;
-    project.toDoList[value].date = editDeadline.value;
-    project.toDoList[value].urgency = editPriority.value;
-    editPopup.style.display = "none";
-    addListPopup.style.gridRow = "2 / 4";
-    refreshList(currentProject);
+    if (editTaskName.value === "") {
+        alert("Please Enter a Task Name");
+    } else {
+        project.toDoList[value].name = editTaskName.value;
+        project.toDoList[value].note = editTaskDesc.value;
+        project.toDoList[value].date = editDeadline.value;
+        project.toDoList[value].urgency = editPriority.value;
+        editPopup.style.display = "none";
+        addListPopup.style.gridRow = "2 / 4";
+        render.refreshList(currentProject);
+    }
 }
-
 function deleteEventListener(element, element2, project, value) {
     element.removeChild(element2);
     project.toDoList.splice(value, 1);
-    refreshList(project);
+    render.refreshList(project);
 }
 
-function clearList() {
-    while (listMain.firstChild) {
-        listMain.removeChild(listMain.lastChild);
-    }
-}
-
-function clearButtons() {
-    while (sidebar.firstChild) {
-        sidebar.removeChild(sidebar.lastChild);
-    }
-}
-
-projectButtons();
+render.projectButtons();
 console.log(projectList);
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleab04d36dccfabd594e59.js.map
+//# sourceMappingURL=bundlefdbd857dc14689d067e4.js.map
