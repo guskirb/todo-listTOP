@@ -152,8 +152,6 @@ addListButton.addEventListener("click", () => {
     }
 })
 
-
-
 submitButton.addEventListener("click", render.newListButton);
 
 // add project popup window
@@ -180,9 +178,7 @@ addButton.addEventListener("click", () => {
     }
 })
 
-
 function projectEventListeners(element, value) {
-
     element.firstChild.addEventListener("click", () => {
         document.querySelector(".select")?.classList.remove("select");
         element.classList.add("select");
