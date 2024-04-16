@@ -73,6 +73,9 @@
 :root {
   --sidebar-color: #00aa77;
   --sidebar-color-light: #00da98;
+  --light-grey: #f1f1f1;
+  --box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
 
 body {
@@ -86,7 +89,7 @@ body {
 }
 
 #header {
-  background-color: rgb(161, 161, 161);
+  background-color: var(--light-grey);
   grid-row: 1 / span 1;
   grid-column: 2 / span 2;
   display: flex;
@@ -97,7 +100,8 @@ body {
 }
 
 .searchIcon {
-  height: 30px;
+  height: 25px;
+  width: 25px;
   margin-left: auto;
   margin-right: 10px;
 }
@@ -122,12 +126,12 @@ body {
 #sidebar h2 {
   padding-left: 30px;
   color: white;
+  font-weight: 400;
 }
 
 #projectList {
   display: flex;
   flex-flow: column;
-  gap: 5px;
 }
 
 #projectList > div {
@@ -138,7 +142,7 @@ body {
 
 .projectDelete {
   content: url(../resources/whiteclose.svg);
-  height: 30px;
+  height: 20px;
   padding-right: 20px;
 }
 
@@ -146,7 +150,7 @@ body {
   border: none;
   background: transparent;
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
   width: 100%;
   height: 40px;
@@ -155,6 +159,10 @@ body {
 }
 
 #projectList > div:hover {
+  background-color: var(--sidebar-color-light);
+}
+
+.select {
   background-color: var(--sidebar-color-light);
 }
 
@@ -170,7 +178,7 @@ body {
 
 #addProjectPopup {
   position: absolute;
-  background-color: rgb(222, 255, 103);
+  background-color: var(--light-grey);
   width: 230px;
   height: 100px;
   align-self: center;
@@ -180,7 +188,9 @@ body {
   align-items: center;
   bottom: 8vh;
   border-radius: 5px;
-  padding: 20px;
+  padding: 15px;
+  font-weight: 500;
+  box-shadow: var(--box-shadow);
 }
 
 #addProjectPopup > div {
@@ -193,6 +203,16 @@ body {
   align-self: end;
   width: 20%;
   height: 25px;
+  color: white;
+  background-color: var(--sidebar-color);
+  border-radius: 5px;
+  border: none;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+#addProjectPopup > button:hover {
+  background-color: var(--sidebar-color-light);
 }
 
 #addProjectPopup > input {
@@ -202,18 +222,34 @@ body {
   padding-left: 10px;
 }
 
+#projectTitle {
+  font-weight: 500;
+}
+
 .titleList {
   display: grid;
   grid-template-columns: 1fr 10fr 3fr 3fr 2fr;
   align-items: center;
   justify-items: start;
-  background-color: rgb(196, 196, 196);
+  background-color: var(--light-grey);
   border-radius: 10px;
+  font-weight: 500;
+  height: 40px;
 }
 
 .titleList > img {
   height: 30px;
   justify-self: center;
+}
+
+#addList {
+  height: 35px;
+  justify-self: end;
+  padding-right: 15px;
+}
+
+.titleList > button {
+  border: none;
 }
 
 #toDoList {
@@ -235,20 +271,17 @@ body {
   margin-top: 5px;
   align-items: center;
   justify-items: start;
-  border: solid 2px rgb(124, 124, 124);
+  border: solid 1px var(--light-grey);
   height: 35px;
   border-radius: 10px;
 }
 
-#list > div > input[type="checkbox"] {
-  justify-self: center;
+#list > div:hover {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
 
-#addList {
-  height: 40px;
-  width: 40px;
-  border-radius: 10px;
-  justify-self: end;
+#list > div > input[type="checkbox"] {
+  justify-self: center;
 }
 
 .date {
@@ -298,17 +331,18 @@ body {
 }
 
 #editList {
-  background-color: blueviolet;
+  background-color: var(--light-grey);
   display: none;
   flex-flow: column;
-  padding: 20px;
   grid-column: 3 / 4;
   grid-row: 2 / 3;
   padding: 20px;
-  gap: 10px;
-  margin: 5px;
+  gap: 5px;
+  margin: 10px;
   border-radius: 5px;
   margin-bottom: 0px;
+  font-weight: 500;
+  box-shadow: var(--box-shadow);
 }
 
 .editUpper {
@@ -323,22 +357,36 @@ body {
   align-items: center;
 }
 
-#editList > button {
+#editList > button,
+#details > button {
   width: 20%;
   height: 30px;
   align-self: flex-end;
+  color: white;
+  background-color: var(--sidebar-color);
+  border-radius: 5px;
+  border: none;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+#editList > button:hover,
+#details > button:hover {
+  background-color: var(--sidebar-color-light);
 }
 
 #details {
   grid-column: 3 / 4;
   grid-row: 2 / 4;
-  background-color: red;
-  margin: 5px;
+  background-color: var(--light-grey);
+  margin: 10px;
   border-radius: 5px;
   display: none;
   flex-flow: column;
   padding: 20px;
-  gap: 10px;
+  gap: 5px;
+  font-weight: 500;
+  box-shadow: var(--box-shadow);
 }
 
 .detailsUpper {
@@ -353,12 +401,6 @@ body {
   align-items: center;
 }
 
-#details > button {
-  width: 20%;
-  height: 30px;
-  align-self: flex-end;
-}
-
 .edit {
   height: 25px;
   content: url(../resources/edit.svg);
@@ -370,7 +412,8 @@ body {
 }
 
 #editList input,
-#details input {
+#details input,
+#projectInput {
   border-radius: 10px;
   height: 25px;
   font-family: "Roboto", sans-serif;
@@ -397,4 +440,21 @@ select {
   font-size: 1em;
   padding: 5px;
   font-weight: 300;
+}
+
+#popupClose,
+#closeEdit,
+#closeDetails {
+  border: none;
+  height: 25px;
+  width: 25px;
+  color: white;
+  background-color: var(--sidebar-color);
+  border-radius: 5px;
+}
+
+#popupClose:hover,
+#closeEdit:hover,
+#closeDetails:hover {
+  background-color: var(--sidebar-color-light);
 }
