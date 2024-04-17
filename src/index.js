@@ -30,15 +30,27 @@ let projectList = [];
 
 let currentProject;
 
-let today = new newProject("Today");
-let thisWeek = new newProject("This Week");
-thisWeek.addToList("Mum's birthday", "medium", "Remember to buy her a gift", "2024-04-29");
-thisWeek.addToList("Work meeting", "high", "Bring draft proposal", "2024-04-30");
-today.addToList("Meet friends for lunch", "low", "Call her 10 minutes before");
-today.addToList("Go shopping", "medium", "Buy apples");
-today.addToList("Make dinner", "low", "Look up pie recipe");
-projectList.push(today);
-projectList.push(thisWeek);
+const updateStorage = function () {
+    localStorage.setItem("projectStorage", JSON.stringify(projectList))
+}
+
+const getStorage = function () {
+    JSON.parse(localStorage.getItem("projectStorage"))
+}
+
+if (localStorage.projectStorage === undefined) {
+    let today = new newProject("Today");
+    let thisWeek = new newProject("This Week");
+    thisWeek.addToList("Mum's birthday", "medium", "Remember to buy her a gift", "2024-04-29");
+    thisWeek.addToList("Work meeting", "high", "Bring draft proposal", "2024-04-30");
+    today.addToList("Meet friends for lunch", "low", "Call her 10 minutes before");
+    today.addToList("Go shopping", "medium", "Buy apples");
+    today.addToList("Make dinner", "low", "Look up pie recipe");
+    projectList.push(today);
+    projectList.push(thisWeek);
+} else {
+    projectList = JSON.parse(localStorage.getItem("projectStorage"));
+}
 
 let render = new class RenderClass {
 
@@ -52,7 +64,7 @@ let render = new class RenderClass {
         listMain.appendChild(newDiv);
         listMain.lastChild.classList.add(value);
         newDiv.appendChild(checkBox);
-        newDiv.appendChild(document.createElement("li")).textContent = project.toDoList[value].name;
+        newDiv.appendChild(document.createElement("li")).textContent = project.toDoList[value].item;
         newDiv.appendChild(document.createElement("li")).textContent = project.toDoList[value].date;
         newDiv.lastChild.classList.add("date");
         newDiv.appendChild(document.createElement("div"))
@@ -75,14 +87,21 @@ let render = new class RenderClass {
         } if (taskName.value === "") {
             alert("Please Enter a Task Name");
         } else {
-            currentProject.addToList(taskName.value, priority.value, taskDesc.value, deadline.value);
+            console.log(currentProject);
+            currentProject.toDoList.push({ item: taskName.value, urgency: priority.value, note: taskDesc.value, date: deadline.value });
+            taskName.value = "";
+            priority.value = "low";
+            taskDesc.value = "";
+            deadline.value = "";
             render.refreshList(currentProject);
+            updateStorage();
         }
     }
 
     projectButtons() {
         this.clearButtons();
         for (let x = 0; x < projectList.length; x++) {
+            getStorage();
             this.newProjectButton(x);
         }
     }
@@ -173,6 +192,7 @@ addButton.addEventListener("click", () => {
         alert("Please Enter a Project Name");
     } else {
         projectList.push(new newProject(projectInput.value));
+        updateStorage();
         render.projectButtons();
         projectInput.value = "";
     }
@@ -197,7 +217,7 @@ function editEventListener(project, value) {
     editPopup.style.gridRow = "2 / 3";
     editPopup.style.gridColumn = "3 / 4";
     addListPopup.style.gridRow = "3 / 4";
-    editTaskName.value = project.toDoList[value].name;
+    editTaskName.value = project.toDoList[value].item;
     editTaskDesc.value = project.toDoList[value].note;
     editDeadline.value = project.toDoList[value].date;
     editPriority.value = project.toDoList[value].urgency;
@@ -210,7 +230,7 @@ function editButtonListener(project, value) {
     if (editTaskName.value === "") {
         alert("Please Enter a Task Name");
     } else {
-        project.toDoList[value].name = editTaskName.value;
+        project.toDoList[value].item = editTaskName.value;
         project.toDoList[value].note = editTaskDesc.value;
         project.toDoList[value].date = editDeadline.value;
         project.toDoList[value].urgency = editPriority.value;
